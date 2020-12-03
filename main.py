@@ -4,6 +4,7 @@ from time import sleep
 from random import choice
 from faker import Faker
 from faker.providers import internet
+import pypeln as pl
 
 URL = 'https://usb2.vf68.xyz/Home/Register/register.html'
 CODE = 2020101153485010
@@ -29,8 +30,12 @@ def spam():
     }
     )
 
+    print('done!')
+
 while True:
-    spam()
-    counter += 1
-    print(counter)
-    sleep(0.01)
+    stage = pl.thread.map(spam, None, workers=3)
+    data = list(stage)
+    # spam()
+    # counter += 1
+    # print(counter)
+    # sleep(0.01)
