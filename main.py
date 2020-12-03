@@ -30,10 +30,13 @@ def spam():
     }
     )
 
+    return email, password
+
 while True:
     stage = pl.thread.map(spam, [], workers=3)
     data = list(stage)
-    print('done!')
+    for email, password in data:
+        print(email, password)
     # spam()
     # counter += 1
     # print(counter)
