@@ -38,6 +38,6 @@ while True:
     for email, password in data:
         print(email, password)
     # spam()
-    # counter += 1
-    # print(counter)
+    counter += 3
+    print(counter)
     # sleep(0.01)
