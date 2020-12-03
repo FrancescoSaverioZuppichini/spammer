@@ -1,6 +1,6 @@
 import requests as r
 import json
-import sleep
+from time import sleep
 from random import choice
 from faker import Faker
 from faker.providers import internet
