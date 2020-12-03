@@ -33,4 +33,4 @@ while True:
     spam()
     counter += 1
     print(counter)
-    sleep(0.1)
+    sleep(0.01)
