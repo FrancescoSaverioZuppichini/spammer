@@ -20,7 +20,7 @@ def get_user():
     return email, password
 
 
-def spam():
+def spam(*args):
     email, password = get_user()
     res = r.post(URL, data={
         'email': email,
@@ -30,10 +30,10 @@ def spam():
     }
     )
 
-    return email, password
+    return (email, password)
 
 while True:
-    stage = pl.thread.map(spam, [], workers=3)
+    stage = pl.thread.map(spam, [None, None, None], workers=3)
     data = list(stage)
     for email, password in data:
         print(email, password)
