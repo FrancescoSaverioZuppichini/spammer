@@ -30,11 +30,10 @@ def spam():
     }
     )
 
-    print('done!')
-
 while True:
     stage = pl.thread.map(spam, [], workers=3)
     data = list(stage)
+    print('done!')
     # spam()
     # counter += 1
     # print(counter)
